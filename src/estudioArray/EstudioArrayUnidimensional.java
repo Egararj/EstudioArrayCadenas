@@ -1,7 +1,12 @@
 package estudioArray;
 
+import java.util.Scanner;
+
 public class EstudioArrayUnidimensional {
     public EstudioArrayUnidimensional(){
+        Scanner leer=new Scanner(System.in);
+        leer=null;
+
         System.out.println("Array Unidimensional");
         int[] enteros; //declaración
         enteros = new int[5]; //instanciamiento indicando la cantidad de elementos que tiene
@@ -82,9 +87,46 @@ public class EstudioArrayUnidimensional {
             }
         System.out.println(i+1+" hay "+repe+" repetidos");
         }
+/* 
+        //Ejercicio 3
+        System.out.println("Ejercicio 3. Ingresa 6 elementos y los muestra al revés");
 
+        int[] SeisElementos = new int[6];
+
+        for(int i=0; i<6; i++){
+            System.out.println("Ingrese un elemento");
+        }
+         */
+        //Ejercicio 4
+        System.out.println("Ejercicio 4. Array intercalado");
+
+        int[] primerArray =new int[5];
+        int[] segundoArray =new int[5];
+        int[] tercerArray =new int[10];
+
+        for(int i=0; i<5; i++){
+            System.out.println("Ingrese un valor para el primer array (posición "+i+")");
+            leer=new Scanner(System.in);
+            primerArray[i]= leer.nextInt();
+            leer=null;
+        }
         
-    
+        for(int i=0; i<5; i++){
+            System.out.println("Ingrese un valor para el segundo array (posición "+i+")");
+            leer=new Scanner(System.in);
+            segundoArray[i]= leer.nextInt();
+            leer=null;
+        }
+
+        for(int i=0, cont=0, resto=0; i<10; cont++){
+            resto=cont%2;
+            if(resto==0)
+            tercerArray[i]=primerArray[i];
+            else
+            tercerArray[i]=segundoArray[i];
+            System.out.println(tercerArray[i]);
+        }
+
     }
 
     private int[] generaArraysAleatorios(int cantidad, int limSup, int limInf) {

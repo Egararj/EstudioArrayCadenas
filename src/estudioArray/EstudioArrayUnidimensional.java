@@ -25,7 +25,7 @@ public class EstudioArrayUnidimensional {
         int[] primitiva=generaPrimitiva(cantidad,limInf,limSup);
         for(int i=0;i<primitiva.length;i++)
         System.out.println(primitiva[i]);
-
+/* 
         //Arrays en paralelo
         String[] nombreAlumnos={"Pepe","Pablo","Ana","Antonio","Manolo","Juan","Jose","Maria","Jesus","Elena"};
         int sobresaliente=0, notable=0, suficiente=0;
@@ -66,7 +66,25 @@ public class EstudioArrayUnidimensional {
         }
         System.out.println("Valor máximo de la array : "+arrayMax);
         System.out.println("Valor mínimo de la array : "+arrayMin);
+ */
+        //Ejercicio 2
+        System.out.println("Ejercicio 2. Cuenta números de una array");
+        cantidad=20;
+        limInf=1;
+        limSup=10;
+        int[] array20elementos=generaArraysAleatorios(cantidad, limSup, limInf);
+
+        for (int i=0,repe=0; i<limSup;i++){
+            repe=0;
+            for (int cont=0; cont<array20elementos.length; cont++){
+                if(i+1==array20elementos[cont])
+                repe++;
+            }
+        System.out.println(i+1+" hay "+repe+" repetidos");
+        }
+
         
+    
     }
 
     private int[] generaArraysAleatorios(int cantidad, int limSup, int limInf) {

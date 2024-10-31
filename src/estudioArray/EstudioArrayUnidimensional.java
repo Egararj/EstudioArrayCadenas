@@ -87,7 +87,7 @@ public class EstudioArrayUnidimensional {
             }
         System.out.println(i+1+" hay "+repe+" repetidos");
         }
-/* 
+
         //Ejercicio 3
         System.out.println("Ejercicio 3. Ingresa 6 elementos y los muestra al revés");
 
@@ -95,8 +95,17 @@ public class EstudioArrayUnidimensional {
 
         for(int i=0; i<6; i++){
             System.out.println("Ingrese un elemento");
+            leer= new Scanner(System.in);
+            SeisElementos[i]=leer.nextInt();
+            leer=null;
         }
-         */
+        SeisElementos=arrayInvertido(SeisElementos);
+
+        for (int i=0;i<SeisElementos.length; i++){
+            System.out.println(SeisElementos[i]);
+        }
+
+        
         //Ejercicio 4
         System.out.println("Ejercicio 4. Array intercalado");
 
@@ -127,6 +136,23 @@ public class EstudioArrayUnidimensional {
             System.out.println(tercerArray[i]);
         }
 
+    }
+
+    private int[] arrayInvertido(int[] arrayBase) {
+        int[] arrayInvertido;
+        int cont=0;
+
+        for(int i=0; i<arrayBase.length; i++){
+            cont++;
+        }
+        arrayInvertido= new int[cont];
+
+        for (int i=0; i<arrayBase.length; i++){
+            arrayInvertido[i]=arrayBase[cont-1];
+            cont--;
+        }
+
+        return arrayInvertido;
     }
 
     private int[] generaArraysAleatorios(int cantidad, int limSup, int limInf) {

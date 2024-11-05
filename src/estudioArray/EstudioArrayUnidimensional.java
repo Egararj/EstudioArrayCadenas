@@ -73,22 +73,22 @@ public class EstudioArrayUnidimensional {
         System.out.println("Valor mínimo de la array : "+arrayMin);
  */
         //Ejercicio 2
-        System.out.println("Ejercicio 2. Cuenta números de una array");
+/*         System.out.println("Ejercicio 2. Cuenta números de una array");
         cantidad=20;
         limInf=1;
         limSup=10;
         int[] array20elementos=generaArraysAleatorios(cantidad, limSup, limInf);
 
-        for (int i=0,repe=0; i<limSup;i++){
+        for (int i=1,repe=0; i<=limSup;i++){
             repe=0;
             for (int cont=0; cont<array20elementos.length; cont++){
-                if(i+1==array20elementos[cont])
+                if(i==array20elementos[cont])
                 repe++;
             }
-        System.out.println(i+1+" hay "+repe+" repetidos");
-        }
+        System.out.println(i+" hay "+repe+" repetidos");
+        } */
 
-/*         //Ejercicio 3
+        //Ejercicio 3
         System.out.println("Ejercicio 3. Ingresa 6 elementos y los muestra al revés");
 
         int[] SeisElementos = new int[6];
@@ -104,7 +104,7 @@ public class EstudioArrayUnidimensional {
         for (int i=0;i<SeisElementos.length; i++){
             System.out.println(SeisElementos[i]);
         }
- */
+
         
         //Ejercicio 4
         System.out.println("Ejercicio 4. Array intercalado");
@@ -147,16 +147,13 @@ public class EstudioArrayUnidimensional {
         int[] arrayInvertido;
         int cont=0;
 
-        for(int i=0; i<arrayBase.length; i++){
-            cont++;
-        }
+        cont=arrayBase.length;
         arrayInvertido= new int[cont];
 
         for (int i=0; i<arrayBase.length; i++){
             arrayInvertido[i]=arrayBase[cont-1];
             cont--;
         }
-
         return arrayInvertido;
     }
 

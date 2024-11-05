@@ -127,15 +127,12 @@ public class EstudioArrayUnidimensional {
             leer=null;
         }
 
-        for(int i=0, cont=0, x=0; cont<tercerArray.length; cont++){
-            i=cont%2;
-            if(i==0)
+        for(int cont=0, x=0; cont<tercerArray.length; cont++, x++){
             tercerArray[cont]=primerArray[x];
-            else{
+            cont++;
             tercerArray[cont]=segundoArray[x];
-            x++;
             }
-        }
+        
 
         for (int i=0; i<tercerArray.length; i++){
             System.out.println(tercerArray[i]);

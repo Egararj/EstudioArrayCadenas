@@ -48,7 +48,7 @@ public class Notas {
     private void mostrarAsignatura(int opcion, int[][] notas, String[] alumnos, String[] asignaturas) {
         System.out.println("Notas "+asignaturas[opcion-1]);
         for (int i=0; i<notas[opcion-1].length; i++){
-            System.out.printf("Alumno: %s. Nota: %d %n",alumnos[i], notas[opcion-1][i]);
+            System.out.printf("Alumno: %-8s. Nota: %d %n",alumnos[i], notas[opcion-1][i]);
         }
         return;
     }

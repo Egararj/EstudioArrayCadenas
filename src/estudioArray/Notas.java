@@ -29,23 +29,27 @@ public class Notas {
         leer=null;
         switch (opcion) {
             case 1:
-                mostrarAsignatura(opcion);
+                mostrarAsignatura(opcion, notas, alumnos, asignaturas);
             break;
             case 2:
-                mostrarAsignatura(opcion);
+                mostrarAsignatura(opcion, notas, alumnos, asignaturas);
                 break;
             case 3:
-                mostrarAsignatura(opcion);              
+                mostrarAsignatura(opcion, notas, alumnos, asignaturas);              
                 break;
             case 4:
-                mostrarAsignatura(opcion);  
+                mostrarAsignatura(opcion, notas, alumnos, asignaturas);  
             default:
                 break;
              }
                 
     }
                 
-    private void mostrarAsignatura(int opcion) {
-
+    private void mostrarAsignatura(int opcion, int[][] notas, String[] alumnos, String[] asignaturas) {
+        System.out.println("Notas "+asignaturas[opcion-1]);
+        for (int i=0; i<notas[opcion-1].length; i++){
+            System.out.printf("Alumno: %s. Nota: %d %n",alumnos[i], notas[opcion-1][i]);
+        }
+        return;
     }
 }

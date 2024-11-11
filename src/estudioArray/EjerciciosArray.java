@@ -58,5 +58,8 @@ public class EjerciciosArray {
             System.out.printf("%n");
         }
 
+        //Ejercicio 3
+        System.out.println("");
+
     }
 }

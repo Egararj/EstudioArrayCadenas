@@ -8,7 +8,7 @@ public class EjerciciosArray {
         Scanner leer=new Scanner(System.in);
         leer=null;
         //Ejercicio 1
-        System.out.println("Ejercicio 1. Valores máximos y mínimos de cada fila y de la tabla");
+/*         System.out.println("Ejercicio 1. Valores máximos y mínimos de cada fila y de la tabla");
         int[][]tablaSeisNumeros={
             {6,2},
             {1,8},
@@ -56,18 +56,18 @@ public class EjerciciosArray {
                 System.out.printf("%d",diagonal[f][c]);
             }
             System.out.printf("%n");
-        }
+        } */
 
         //Ejercicio 3
         System.out.println("Ejercicio 3. Cuadrado mágico");
 
-        boolean filas=true, columnas=true, diagonalPrincipal=true, diagonalSecundaria=true;
+        boolean filas=true, columnas=true, diagonalPrincipal=true, diagonalSecundaria=true, magico=false;
         int[][] cuadradoMagico={
-            {3,4,21,22,25},
-            {20,18,11,16,10},
-            {23,13,15,17,7},
-            {24,14,19,12,8},
-            {5,26,9,8,27}
+            {19,21,3,10,12},
+            {25,2,9,11,18},
+            {1,8,15,17,24},
+            {7,14,16,23,5},
+            {13,20,22,4,6}
         };
         int sumColumna=0, sumColumna2=0;
         int sumFilas=0, sumFilas2=0;
@@ -75,17 +75,17 @@ public class EjerciciosArray {
         int sumDiagonalSecundaria=0;
 
         //compara Columnas
-        for (int c=0; c<cuadradoMagico[c].length; c++){
-            sumColumna=0;
+        for (int c=0; c<cuadradoMagico[c].length-1; c++){
+            sumColumna2=0;
             for (int f=0; f<cuadradoMagico.length; f++){
                 if(c==0)
                 sumColumna+=cuadradoMagico[f][c];
                 else
                 sumColumna2+=cuadradoMagico[f][c];
-                if(c>0){
-                    if(sumColumna!=sumColumna2)
-                    columnas=false;
-                }
+            }
+            if(c>0){
+                if(sumColumna!=sumColumna2)
+                columnas=false;
             }
         }
 
@@ -97,10 +97,10 @@ public class EjerciciosArray {
                     sumFilas+=cuadradoMagico[f][c];
                 else
                     sumFilas2+=cuadradoMagico[f][c];
-                if(f>0){
-                    if(sumFilas!=sumFilas2)
-                    filas=false;
-                }
+            }
+            if(f>0){
+                if(sumFilas!=sumFilas2)
+                filas=false;
             }
         }
 
@@ -114,9 +114,21 @@ public class EjerciciosArray {
 
         //suma Diagonal Secundaria
         for (int f=0; f<cuadradoMagico.length; f++){
-            for (int c=0; c<cuadradoMagico[f].length; c++){
-                   
-            }
+            sumDiagonalSecundaria+=cuadradoMagico[f][(cuadradoMagico.length-1)-f];
         }
+
+        //compara Diagonales
+        if(sumDiagonalPrincipal!=sumDiagonalSecundaria ||sumDiagonalPrincipal!=sumColumna || sumDiagonalPrincipal!=sumFilas)
+        diagonalPrincipal=false;
+        if(sumDiagonalSecundaria!=sumDiagonalPrincipal || sumDiagonalSecundaria!=sumColumna || sumDiagonalSecundaria!=sumFilas)
+        diagonalSecundaria=false;
+
+        if(filas && columnas && diagonalPrincipal && diagonalSecundaria)
+        magico=true;
+
+        if(magico)
+            System.out.println("El cuadrado es mágico");
+        else
+            System.out.println("El cuadrado no es mágico");
     }
 }

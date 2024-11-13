@@ -59,7 +59,64 @@ public class EjerciciosArray {
         }
 
         //Ejercicio 3
-        System.out.println("");
+        System.out.println("Ejercicio 3. Cuadrado mágico");
 
+        boolean filas=true, columnas=true, diagonalPrincipal=true, diagonalSecundaria=true;
+        int[][] cuadradoMagico={
+            {3,4,21,22,25},
+            {20,18,11,16,10},
+            {23,13,15,17,7},
+            {24,14,19,12,8},
+            {5,26,9,8,27}
+        };
+        int sumColumna=0, sumColumna2=0;
+        int sumFilas=0, sumFilas2=0;
+        int sumDiagonalPrincipal=0;
+        int sumDiagonalSecundaria=0;
+
+        //compara Columnas
+        for (int c=0; c<cuadradoMagico[c].length; c++){
+            sumColumna=0;
+            for (int f=0; f<cuadradoMagico.length; f++){
+                if(c==0)
+                sumColumna+=cuadradoMagico[f][c];
+                else
+                sumColumna2+=cuadradoMagico[f][c];
+                if(c>0){
+                    if(sumColumna!=sumColumna2)
+                    columnas=false;
+                }
+            }
+        }
+
+        //compara Filas
+        for (int f=0; f<cuadradoMagico.length; f++){
+            sumFilas2=0;
+            for (int c=0; c<cuadradoMagico[f].length; c++){
+                if(f==0)
+                    sumFilas+=cuadradoMagico[f][c];
+                else
+                    sumFilas2+=cuadradoMagico[f][c];
+                if(f>0){
+                    if(sumFilas!=sumFilas2)
+                    filas=false;
+                }
+            }
+        }
+
+        //suma Diagonal Principal
+        for (int f=0; f<cuadradoMagico.length; f++){
+            for (int c=0; c<cuadradoMagico[f].length; c++){
+                if(f==c)
+                sumDiagonalPrincipal+=cuadradoMagico[f][c];
+            }
+        }
+
+        //suma Diagonal Secundaria
+        for (int f=0; f<cuadradoMagico.length; f++){
+            for (int c=0; c<cuadradoMagico[f].length; c++){
+                   
+            }
+        }
     }
 }

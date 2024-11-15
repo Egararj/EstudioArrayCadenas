@@ -150,5 +150,19 @@ public class EjerciciosArray {
         }
         System.out.println("pausa");
 
+        //Ejercicio 5
+        System.out.println("Ejercicio 5. Crear cuadrado mágico 5x5");
+
+        int[][] arrayM =new int [5][5];
+        int f=0, c=0;
+
+        int cont=1;
+        while(cont<26){
+            
+
+            cont++;
+        }
+
+
     }
 }

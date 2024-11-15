@@ -11,5 +11,6 @@ public class Main {
         //EstudioArrayBidimiensionales ejercicio=new EstudioArrayBidimiensionales();
         //Notas ejercicio=new Notas();
         EjerciciosArray ejercicio=new EjerciciosArray();
+
     }
 }

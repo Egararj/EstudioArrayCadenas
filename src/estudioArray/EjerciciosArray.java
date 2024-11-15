@@ -1,5 +1,6 @@
 package estudioArray;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class EjerciciosArray {
@@ -130,5 +131,24 @@ public class EjerciciosArray {
             System.out.println("El cuadrado es mágico");
         else
             System.out.println("El cuadrado no es mágico");
+
+        //Ejercicio 4
+        System.out.println("Ejercicio 4. Array rellenado");
+
+        int[][] arrayRellenado= new int[5][5];
+        int suma=0;
+        
+        for (int f=0; f<arrayRellenado.length; f++){
+            for (int c=0; c<arrayRellenado[f].length; c++){
+                suma=f+c;
+                if(suma<arrayRellenado.length)
+                arrayRellenado[f][c]=suma;
+                else
+                arrayRellenado[f][c]=arrayRellenado.length-(suma-arrayRellenado.length)-2;
+            }
+            System.out.println(Arrays.toString(arrayRellenado[f]));
+        }
+        System.out.println("pausa");
+
     }
 }

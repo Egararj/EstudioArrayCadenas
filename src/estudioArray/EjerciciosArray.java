@@ -154,13 +154,27 @@ public class EjerciciosArray {
         System.out.println("Ejercicio 5. Crear cuadrado mágico 5x5");
 
         int[][] arrayM =new int [5][5];
-        int f=0, c=0;
+        int f=0, c=2;
 
         int cont=1;
         while(cont<26){
-            
+            if(cont>5){
+                if ((cont-1)%5==0){
+                    f+=2;
+                    c--;
+                }
+            }
+            if (f<0) f=4;
+            if (f>4) f=0;
+            if (c>4) c=0;
+            arrayM[f][c]=cont;
 
             cont++;
+            f--;
+            c++;
+        }
+        for (int fila=0; fila<arrayM.length; fila++){
+            System.out.println(Arrays.toString(arrayM[fila]));
         }
 
 

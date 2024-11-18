@@ -42,9 +42,6 @@ public class Primitiva {
         System.out.println("El premio es:");
         System.out.println(Arrays.toString(premio2));
         System.out.println("Han hecho falta generar "+totalBoletos+" boletos para acertar");
-        
-
-        System.out.println("pausa");
         }
         
         private int[] generadorBoleto() {

@@ -1,5 +1,6 @@
 package vista;
 
+import estudioArray.CaballoAjedrez;
 import estudioArray.EjerciciosArray;
 import estudioArray.EstudioArrayBidimiensionales;
 import estudioArray.EstudioArrayUnidimensional;
@@ -12,7 +13,8 @@ public class Main {
         //EstudioArrayBidimiensionales ejercicio=new EstudioArrayBidimiensionales();
         //Notas ejercicio=new Notas();
         //EjerciciosArray ejercicio=new EjerciciosArray();
-        Primitiva ejercicio=new Primitiva();
+        //Primitiva ejercicio=new Primitiva();
+        CaballoAjedrez ejercicio=new CaballoAjedrez();
 
     }
 }

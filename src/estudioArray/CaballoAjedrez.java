@@ -1,5 +1,6 @@
 package estudioArray;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CaballoAjedrez {
@@ -20,13 +21,44 @@ public class CaballoAjedrez {
 
         tablero[f][c]=1;
 
-        movimientosCaballos(tablero);
+        movimientosCaballos(tablero, f, c);
+
+        for (int i=0; i<tablero.length; i++){
+            System.out.println(Arrays.toString(tablero[i]));
+        }
                 
         }
         
-        private void movimientosCaballos(int[][] tablero) {
-
-
+        private void movimientosCaballos(int[][] tablero, int f, int c) {
+            //Hacia arriba
+            if((f-2)>=0){
+                if((c-1)>=0)
+                    tablero[f-2][c-1]=5;
+                if((c+1)<=7)
+                    tablero[f-2][c+1]=5;
+            }
+            //Hacia abajo
+            if((f+2)<=7){
+                if((c-1)>=0)
+                    tablero[f+2][c-1]=5;
+                if((c+1)<=7)
+                    tablero[f+2][c+1]=5;
+            }
+            //Hacia la derecha
+            if((c+2)<=7){
+                if((f-1)>=0)
+                    tablero[f-1][c+2]=5;
+                if((f+1)<=7)
+                    tablero[f+1][c+2]=5;
+            }
+            //Hacia la izquierda
+            if((c-2)>=0){
+                if((f-1)>=0)
+                    tablero[f-1][c-2]=5;
+                if((f+1)<=7)
+                    tablero[f+1][c-2]=5;
+            }
+            return;
         }
 
 }

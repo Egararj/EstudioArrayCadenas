@@ -49,7 +49,7 @@ public class CartasRepartidas {
         System.out.println("JUGADOR1                                            JUGADOR2");
         for(int f=0; f<10; f++){
             cartasRobadas=roba8Cartas();
-            for(int c=0; c<4; c++){
+            for(int c=0; c<4; c++){ //Muestra la mano y suma si le ha tocado la carta ganadora
                 System.out.printf(" %-8s  ", baraja[cartasRobadas[c]]);
                 jugador1[f][c]=cartasRobadas[c];
                 if(cartaGanadora==cartasRobadas[c]) contadorJugador1++;
@@ -57,7 +57,7 @@ public class CartasRepartidas {
 
             System.out.printf("       ");
             
-            for(int c=4; c<8; c++){
+            for(int c=4; c<8; c++){//Muestra la mano y suma si le ha tocado la carta ganadora
                 System.out.printf(" %-8s  ", baraja[cartasRobadas[c]]);
                 jugador2[f][c-4]=cartasRobadas[c];
                 if(cartaGanadora==cartasRobadas[c]) contadorJugador2++;
@@ -65,7 +65,7 @@ public class CartasRepartidas {
             System.out.println("");
 
         }
-        
+        //Resultado
         System.out.println("Jugador 1 : "+baraja[cartaGanadora]+" = "+contadorJugador1);
         System.out.println("Jugador 2 : "+baraja[cartaGanadora]+" = "+contadorJugador2);
         if(contadorJugador1>contadorJugador2)

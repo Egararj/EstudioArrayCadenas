@@ -14,7 +14,7 @@ public class CartasRepartidas {
         
         int[] cartasRobadas=roba16Cartas();
 
-        System.out.println("JUGADOR 1");
+/*         System.out.println("JUGADOR 1");
         for(int c=0; c<4; c++){
             System.out.printf(": %s : ", baraja[cartasRobadas[c]]);
         }
@@ -36,32 +36,44 @@ public class CartasRepartidas {
         for(int c=12; c<16; c++){
             System.out.printf(": %s : ", baraja[cartasRobadas[c]]);
         }
-        System.out.println("");
+        System.out.println(""); */
 
         //Repartir 10 veces a 2 jugadores
-
+        int cartaGanadora = (int) Math.floor(Math.random()*39);
+        int contadorJugador1=0, contadorJugador2=0;
         int[][] jugador1 =new int[10][4];
         int[][] jugador2 =new int[10][4];
+        
 
+        System.out.println("Carta ganadora : "+baraja[cartaGanadora]);
+        System.out.println("JUGADOR1                                            JUGADOR2");
         for(int f=0; f<10; f++){
             cartasRobadas=roba8Cartas();
-            System.out.println((f+1)+" reparto");
-            System.out.println("JUGADOR 1");
             for(int c=0; c<4; c++){
-                System.out.printf(": %s : ", baraja[cartasRobadas[c]]);
+                System.out.printf(" %-8s  ", baraja[cartasRobadas[c]]);
                 jugador1[f][c]=cartasRobadas[c];
+                if(cartaGanadora==cartasRobadas[c]) contadorJugador1++;
             }
-            System.out.println("");
+
+            System.out.printf("       ");
             
-            System.out.println("JUGADOR 2");
             for(int c=4; c<8; c++){
-                System.out.printf(": %s : ", baraja[cartasRobadas[c]]);
+                System.out.printf(" %-8s  ", baraja[cartasRobadas[c]]);
                 jugador2[f][c-4]=cartasRobadas[c];
+                if(cartaGanadora==cartasRobadas[c]) contadorJugador2++;
             }
-            System.out.println("");
             System.out.println("");
 
         }
+        
+        System.out.println("Jugador 1 : "+baraja[cartaGanadora]+" = "+contadorJugador1);
+        System.out.println("Jugador 2 : "+baraja[cartaGanadora]+" = "+contadorJugador2);
+        if(contadorJugador1>contadorJugador2)
+        System.out.println("Gana el jugador 1");
+        else if(contadorJugador1<contadorJugador2)
+        System.out.println("Gana el jugador 2");
+        else
+        System.out.println("Empate");
         System.out.println("pausa");             
     }
                     

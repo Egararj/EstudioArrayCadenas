@@ -5,6 +5,7 @@ import estudioArray.CartasRepartidas;
 import estudioArray.EjerciciosArray;
 import estudioArray.EstudioArrayBidimiensionales;
 import estudioArray.EstudioArrayUnidimensional;
+import estudioArray.LeyDhondt;
 import estudioArray.Notas;
 import estudioArray.Primitiva;
 
@@ -16,7 +17,8 @@ public class Main {
         //EjerciciosArray ejercicio=new EjerciciosArray();
         //Primitiva ejercicio=new Primitiva();
         //CaballoAjedrez ejercicio=new CaballoAjedrez();
-        CartasRepartidas ejercicio=new CartasRepartidas();
+        //CartasRepartidas ejercicio=new CartasRepartidas();
+        LeyDhondt ejercicio=new LeyDhondt();
         
     }
 }

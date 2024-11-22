@@ -8,10 +8,10 @@ public class LeyDhondt {
         System.out.println("Ley D'Hondt");
 
         Scanner sc;
-        int censoElectoral=1017958, escaños=9;
-        double VBLANCO, VNULO,VEMITIDOS;
-        int[] VPARTIDOS =new int[7];
-        String[] partidos = {"PACA","PASON","PECA","PRISA","PALO","PEDO","PACO"};
+        int censoElectoral=1017958, escaños=7;
+        double VBLANCO, VNULO,VEMITIDOS;   
+        String[] partidos = {"PACA","PASON","PECA"/* ,"PRISA","PALO","PEDO","PACO" */};
+        int[] VPARTIDOS =new int[partidos.length];
 
         //Introducción de votos
         do{

@@ -11,6 +11,7 @@ public class LeyDhondt {
         int censoElectoral=677904, escaños=10;
         double VBLANCO, VNULO,VEMITIDOS;
         int[] VPARTIDOS =new int[7];
+        String[] partidos = {"PACA","PASON","PECA","PRISA","PALO","PEDO","PACO"};
 
         //Introducción de votos
         do{
@@ -33,27 +34,36 @@ public class LeyDhondt {
             VEMITIDOS=Arrays.stream(VPARTIDOS).sum()+VBLANCO+VNULO;
         }while(censoElectoral<VEMITIDOS);
 
-        actaErectoral(censoElectoral,VEMITIDOS,VBLANCO,VNULO, VPARTIDOS);
+        actaElectoral(censoElectoral,VEMITIDOS,VBLANCO,VNULO, VPARTIDOS);
+        
+        distribucionDeEscaños(escaños, partidos, VPARTIDOS, censoElectoral,VEMITIDOS);
                 
+    }
+                
+        private void distribucionDeEscaños(int escaños, String[] partidos, int[] vPARTIDOS, int censoElectoral, double vEMITIDOS) {
+            int [][] escañosRepartidos =new int [vPARTIDOS.length][escaños];
+            
+
+
+        return;
+    }
         
-        }
+        private void actaElectoral(int censoElectoral, double vEMITIDOS, double vBLANCO, double vNULO, int[] VPARTIDOS) {
+            double abstencion=censoElectoral-vEMITIDOS;
+            double VVALIDOS=Arrays.stream(VPARTIDOS).sum();
+            double VEMITIDOSPORCENTAJE=(vEMITIDOS/censoElectoral)*100;
+            double abstencionPORCENTAJE=(abstencion/censoElectoral)*100;
+            double VVALIDOSPORCENTAJE=(VVALIDOS/vEMITIDOS)*100;
+            double VBLANCOPORCENTAJE=(vBLANCO/vEMITIDOS)*100;
+            double VNULOPORCENTAJE=(vNULO/vEMITIDOS)*100;
         
-        private void actaErectoral(int censoElectoral, double vEMITIDOS, double vBLANCO, double vNULO, int[] VPARTIDOS) {
-                    double abstencion=censoElectoral-vEMITIDOS;
-                    double VVALIDOS=Arrays.stream(VPARTIDOS).sum();
-                    double VEMITIDOSPORCENTAJE=(vEMITIDOS/censoElectoral)*100;
-                    double abstencionPORCENTAJE=(abstencion/censoElectoral)*100;
-                    double VVALIDOSPORCENTAJE=(VVALIDOS/vEMITIDOS)*100;
-                    double VBLANCOPORCENTAJE=(vBLANCO/vEMITIDOS)*100;
-                    double VNULOPORCENTAJE=(vNULO/vEMITIDOS)*100;
-        
-                    System.out.println("ACTA ELECTORAL");
-                    System.out.printf("Votos emitidos %-10.0f %.2f %% sobre el censo %n",vEMITIDOS,VEMITIDOSPORCENTAJE);
-                    System.out.printf("Abstención %-10.0f %.2f %% sobre el censo %n",abstencion,abstencionPORCENTAJE);
-                    System.out.printf("Votos válidos %-10.0f %.2f %% sobre emitidos %n",VVALIDOS,VVALIDOSPORCENTAJE);
-                    System.out.printf("Votos en blanco %-10.0f %.2f %% sobre emitidos %n",vBLANCO,VBLANCOPORCENTAJE);
-                    System.out.printf("Votos nulos %-10.0f %.2f %% sobre emitidos %n",vNULO,VNULOPORCENTAJE);
+            System.out.println("ACTA ELECTORAL");
+            System.out.printf("Votos emitidos %-10.0f %.2f %% sobre el censo %n",vEMITIDOS,VEMITIDOSPORCENTAJE);
+            System.out.printf("Abstención %-10.0f %.2f %% sobre el censo %n",abstencion,abstencionPORCENTAJE);
+            System.out.printf("Votos válidos %-10.0f %.2f %% sobre emitidos %n",VVALIDOS,VVALIDOSPORCENTAJE);
+            System.out.printf("Votos en blanco %-10.0f %.2f %% sobre emitidos %n",vBLANCO,VBLANCOPORCENTAJE);
+            System.out.printf("Votos nulos %-10.0f %.2f %% sobre emitidos %n",vNULO,VNULOPORCENTAJE);
 
             return;
-        }
+    }
 }

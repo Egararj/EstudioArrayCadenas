@@ -8,7 +8,7 @@ public class LeyDhondt {
         System.out.println("Ley D'Hondt");
 
         Scanner sc;
-        int censoElectoral=677904, escaños=10;
+        int censoElectoral=1017958, escaños=9;
         double VBLANCO, VNULO,VEMITIDOS;
         int[] VPARTIDOS =new int[7];
         String[] partidos = {"PACA","PASON","PECA","PRISA","PALO","PEDO","PACO"};
@@ -35,15 +35,65 @@ public class LeyDhondt {
         }while(censoElectoral<VEMITIDOS);
 
         actaElectoral(censoElectoral,VEMITIDOS,VBLANCO,VNULO, VPARTIDOS);
-        
+        sc= new Scanner(System.in);
+        sc.nextLine();
+        sc=null;
         distribucionDeEscaños(escaños, partidos, VPARTIDOS, censoElectoral,VEMITIDOS);
                 
     }
                 
         private void distribucionDeEscaños(int escaños, String[] partidos, int[] vPARTIDOS, int censoElectoral, double vEMITIDOS) {
-            int [][] escañosRepartidos =new int [vPARTIDOS.length][escaños];
-            
+            int [][] repartoDeEscaños =new int [vPARTIDOS.length][escaños];
+            int [] escañosRepartidos =new int [vPARTIDOS.length];
+            int [] copiaVPARTIDOS =new int [vPARTIDOS.length];
+            int mayorVoto=0, mayorVotoC=0, mayorVotoF=0;
+            double censoPorcentaje=0, emitidosPorcentaje=0;
 
+            //Reparto de escaños
+            for (int f=0; f<repartoDeEscaños.length; f++){
+                for(int c=0; c<repartoDeEscaños[f].length; c++){
+                    if(c==0) repartoDeEscaños[f][c]=vPARTIDOS[f];
+                    else repartoDeEscaños[f][c]=vPARTIDOS[f]/(c+1);
+                }
+            }
+
+            //Añade los escaños a cada partido
+            for(int x=0; x<escaños; x++){
+                mayorVoto=0;
+                for(int f=0; f<repartoDeEscaños.length; f++){
+                    for(int c=0; c<repartoDeEscaños[f].length; c++){
+                        if(mayorVoto<repartoDeEscaños[f][c]){
+                            mayorVoto=repartoDeEscaños[f][c];
+                            mayorVotoF=f;
+                            mayorVotoC=c;
+                        }
+                    }
+                }
+                escañosRepartidos[mayorVotoF]++;
+                repartoDeEscaños[mayorVotoF][mayorVotoC]=0;
+            }
+
+            //Copia array
+            for (int c=0; c<vPARTIDOS.length; c++){
+                copiaVPARTIDOS[c]=vPARTIDOS[c];
+            }
+
+            //Salida por pantalla
+            System.out.println("Distribución de escaños");
+            System.out.println("NOMBRE     VOTOS      %CENSO     %EMITIDOS  ESCAÑOS");
+            for (int x=0; x<vPARTIDOS.length; x++){
+                mayorVoto=0;
+                for (int c=0; c<vPARTIDOS.length; c++){
+                    if(mayorVoto<copiaVPARTIDOS[c]) {
+                        mayorVoto=copiaVPARTIDOS[c];
+                        mayorVotoC=c;
+                    }
+                }
+                censoPorcentaje = (copiaVPARTIDOS[mayorVotoC]/(double)censoElectoral)*100;
+                emitidosPorcentaje = (copiaVPARTIDOS[mayorVotoC]/vEMITIDOS)*100;
+                System.out.printf("%-10s %-10d %-10.2f %-10.2f %-10d %n", partidos[mayorVotoC], vPARTIDOS[mayorVotoC], censoPorcentaje, emitidosPorcentaje, escañosRepartidos[mayorVotoC]);
+                copiaVPARTIDOS[mayorVotoC]=0;
+            }
 
         return;
     }

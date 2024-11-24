@@ -46,7 +46,7 @@ public class LeyDhondt {
             int [][] repartoDeEscaños =new int [vPARTIDOS.length][escaños];
             int [] escañosRepartidos =new int [vPARTIDOS.length];
             int [] copiaVPARTIDOS =new int [vPARTIDOS.length];
-            int mayorVoto=0, mayorVotoC=0, mayorVotoF=0;
+            int mayorVoto=0, mayorVotoC=0, mayorVotoF=0, opcion1=0, opcion2=0;
             double censoPorcentaje=0, emitidosPorcentaje=0;
 
             //Reparto de escaños
@@ -60,12 +60,23 @@ public class LeyDhondt {
             //Añade los escaños a cada partido
             for(int x=0; x<escaños; x++){
                 mayorVoto=0;
+                opcion1=0;
+                opcion2=0;
                 for(int f=0; f<repartoDeEscaños.length; f++){
                     for(int c=0; c<repartoDeEscaños[f].length; c++){
                         if(mayorVoto<repartoDeEscaños[f][c]){
                             mayorVoto=repartoDeEscaños[f][c];
                             mayorVotoF=f;
                             mayorVotoC=c;
+                            opcion1=vPARTIDOS[f];
+                        }
+                        else if(mayorVoto==repartoDeEscaños[f][c]){
+                            opcion2=vPARTIDOS[f];
+                            if(opcion2>opcion1){
+                                mayorVoto=repartoDeEscaños[f][c];
+                                mayorVotoF=f;
+                                mayorVotoC=c;
+                            }
                         }
                     }
                 }

@@ -26,6 +26,7 @@ public class Primitiva {
             System.out.println("El boleto "+f+" tiene "+aciertos+" aciertos");
         }
 
+        //Ejercicio 7
         System.out.println("Genera boletos hasta que coincida con el boleto premiado");
 
         int[] premio2=generadorBoleto();

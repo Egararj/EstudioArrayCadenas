@@ -2,6 +2,9 @@ package vista;
 
 import estudioArray.CaballoAjedrez;
 import estudioArray.CartasRepartidas;
+import estudioArray.EjercicioCadena2;
+import estudioArray.EjercicioCadena3;
+import estudioArray.EjercicioCadenas1;
 import estudioArray.EjerciciosArray;
 import estudioArray.EstudioArrayBidimiensionales;
 import estudioArray.EstudioArrayUnidimensional;
@@ -20,7 +23,9 @@ public class Main {
         //CaballoAjedrez ejercicio=new CaballoAjedrez();
         //CartasRepartidas ejercicio=new CartasRepartidas();
         //LeyDhondt ejercicio=new LeyDhondt();
-        EstudioCadenas ejercicio=new EstudioCadenas();
-        
+        //EstudioCadenas ejercicio=new EstudioCadenas();
+        //EjercicioCadenas1 ejercicio1=new EjercicioCadenas1();
+        //EjercicioCadena2 ejercicio=new EjercicioCadena2();
+        EjercicioCadena3 ejercicio=new EjercicioCadena3();
     }
 }

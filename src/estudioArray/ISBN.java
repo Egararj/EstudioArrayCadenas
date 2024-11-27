@@ -1,0 +1,31 @@
+package estudioArray;
+
+public class ISBN {
+    public ISBN(){
+        System.out.println("ISBN");
+
+        String isbn = "9788481302523";
+        int isbnNum = 0, resto=0;
+
+        for (int x=0, cont=3; x<isbn.length()-1; x++){
+            if(cont%2==0){
+                isbnNum+=Integer.parseInt(isbn.charAt(x))*3;
+            }
+            else{
+                isbnNum+=isbn.charAt(x);
+            }
+            cont++;
+        }
+        resto=isbnNum%10;
+        resto=(10-resto);
+        if(resto==10) resto=0;
+
+        if(resto==isbn.charAt(13)){
+            System.out.println("ISBN correcto");
+        }
+        else{
+            System.out.println("ISBN incorrecto");
+        }
+
+    }
+}

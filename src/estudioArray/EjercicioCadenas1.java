@@ -11,9 +11,20 @@ public class EjercicioCadenas1 {
         String frase = sc.nextLine();
         sc=null;
         char y=' ';
+        boolean salto=false, salto2=false;
         for (int x=0; x<frase.length(); x++){
-            if(frase.charAt(x)!=y) System.out.print(frase.charAt(x));
-            else System.out.printf("%n");
+            if(frase.charAt(x)!=y){
+                System.out.print(frase.charAt(x));
+                salto=false;
+                salto2=true;
+            }
+            else {
+                salto=true;
+            }
+            if(salto && salto2){
+                System.out.printf("%n");
+                salto2=false;
+            }
         }
     }
 }

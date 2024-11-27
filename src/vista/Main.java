@@ -9,6 +9,7 @@ import estudioArray.EjerciciosArray;
 import estudioArray.EstudioArrayBidimiensionales;
 import estudioArray.EstudioArrayUnidimensional;
 import estudioArray.EstudioCadenas;
+import estudioArray.ISBN;
 import estudioArray.LeyDhondt;
 import estudioArray.Notas;
 import estudioArray.Primitiva;
@@ -26,6 +27,7 @@ public class Main {
         //EstudioCadenas ejercicio=new EstudioCadenas();
         //EjercicioCadenas1 ejercicio1=new EjercicioCadenas1();
         //EjercicioCadena2 ejercicio=new EjercicioCadena2();
-        EjercicioCadena3 ejercicio=new EjercicioCadena3();
+        //EjercicioCadena3 ejercicio=new EjercicioCadena3();
+        ISBN ejercicio=new ISBN();
     }
 }

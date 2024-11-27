@@ -13,6 +13,7 @@ import estudioArray.ISBN;
 import estudioArray.LeyDhondt;
 import estudioArray.Notas;
 import estudioArray.Primitiva;
+import estudioArray.TarjetaClave;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -28,6 +29,7 @@ public class Main {
         //EjercicioCadenas1 ejercicio1=new EjercicioCadenas1();
         //EjercicioCadena2 ejercicio=new EjercicioCadena2();
         //EjercicioCadena3 ejercicio=new EjercicioCadena3();
-        ISBN ejercicio=new ISBN();
+        //ISBN ejercicio=new ISBN();
+        TarjetaClave ejercicio=new TarjetaClave();
     }
 }

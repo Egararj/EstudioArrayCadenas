@@ -6,13 +6,13 @@ public class ISBN {
 
         String isbn = "9788481302523";
         int isbnNum = 0, resto=0;
-
+     
         for (int x=0, cont=3; x<isbn.length()-1; x++){
             if(cont%2==0){
-                isbnNum+=Integer.parseInt(isbn.charAt(x))*3;
+                isbnNum+=Integer.parseInt(String.valueOf(isbn.charAt(x)))*3;
             }
             else{
-                isbnNum+=isbn.charAt(x);
+                isbnNum+=Integer.parseInt(String.valueOf(isbn.charAt(x)));
             }
             cont++;
         }
@@ -20,7 +20,7 @@ public class ISBN {
         resto=(10-resto);
         if(resto==10) resto=0;
 
-        if(resto==isbn.charAt(13)){
+        if(resto==Integer.parseInt(String.valueOf(isbn.charAt(12)))){
             System.out.println("ISBN correcto");
         }
         else{

@@ -9,6 +9,7 @@ import estudioArray.EjerciciosArray;
 import estudioArray.EstudioArrayBidimiensionales;
 import estudioArray.EstudioArrayUnidimensional;
 import estudioArray.EstudioCadenas;
+import estudioArray.FraseEncriptada;
 import estudioArray.ISBN;
 import estudioArray.LeyDhondt;
 import estudioArray.Notas;
@@ -30,6 +31,7 @@ public class Main {
         //EjercicioCadena2 ejercicio=new EjercicioCadena2();
         //EjercicioCadena3 ejercicio=new EjercicioCadena3();
         //ISBN ejercicio=new ISBN();
-        TarjetaClave ejercicio=new TarjetaClave();
+        //TarjetaClave ejercicio=new TarjetaClave();
+        FraseEncriptada ejercicio=new FraseEncriptada();
     }
 }

@@ -26,6 +26,6 @@ public class ISBN {
         else{
             System.out.println("ISBN incorrecto");
         }
-
+/*         Character.isDigit(isbn.charAt(1)); */ //Para comprobar si es un dígito
     }
 }

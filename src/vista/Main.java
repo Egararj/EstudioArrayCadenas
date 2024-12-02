@@ -2,6 +2,7 @@ package vista;
 
 import estudioArray.CaballoAjedrez;
 import estudioArray.CartasRepartidas;
+import estudioArray.Cincuerizado;
 import estudioArray.ContrasenaSegura;
 import estudioArray.EjercicioCadena2;
 import estudioArray.EjercicioCadena3;
@@ -34,6 +35,7 @@ public class Main {
         //ISBN ejercicio=new ISBN();
         //TarjetaClave ejercicio=new TarjetaClave();
         //FraseEncriptada ejercicio=new FraseEncriptada();
-        ContrasenaSegura ejercicio=new ContrasenaSegura();
+        //ContrasenaSegura ejercicio=new ContrasenaSegura();
+        Cincuerizado ejercicio=new Cincuerizado();
     }
 }

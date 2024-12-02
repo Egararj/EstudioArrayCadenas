@@ -21,7 +21,7 @@ public class FraseEncriptada {
                         String fraseDesencriptada="";
                         int posicionClave=0;
 
-                        for (int x=0, y=0, trozo10=0; x<fraseEncriptada.length()+9; x++, y++){
+                        for (int x=0, y=0, trozo10=0; x<fraseEncriptada.length()+clave.length; x++, y++){
                             if(y==10) {
                                 y=0;
                                 trozo10+=10;
@@ -45,7 +45,7 @@ public class FraseEncriptada {
                         String fraseEncriptada="";
                         int posicionClave=0;
 
-                        for (int x=0, y=0, trozo10=0; x<frase.length()+9; x++, y++){
+                        for (int x=0, y=0, trozo10=0; x<frase.length()+clave.length; x++, y++){
                             if(y==10) {
                                 y=0;
                                 trozo10+=10;

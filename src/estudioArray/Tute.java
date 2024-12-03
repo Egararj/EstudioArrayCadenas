@@ -12,14 +12,83 @@ public class Tute {
                          "1C","2C","3C","4C","5C","6C","7C","10C","11C","12C"};//Copa de 30 a 39
 
         String[] barajaRepartida = reparteCartas(baraja);
+
         //Muestra las manos
         for(int x=0; x<4; x++){
         System.out.println(barajaRepartida[x]);
         }
-        System.out.println("Palo triunfo = ");
 
+        //Selecciona el palo Triunfo
+        String paloTriunfo=paloTriunfo();
+        System.out.println("Palo triunfo = "+paloTriunfo);
 
+        //Mira cada mano de cada jugador si contiene 11 y 12 del mismo palo
+        boolean canta = false;
+        boolean cantó = false;
+        for (int x=0; x<barajaRepartida.length; x++){
+            canta=cantaManos(x,barajaRepartida,paloTriunfo);
+            if(canta) cantó = true;
+        }
+        if(!cantó) System.out.println("Nadie puede cantar");
+        System.out.println("Fin");
+    }
+                            
+            private boolean cantaManos(int x, String[] barajaRepartida, String paloTriunfo) {
+            String mano = barajaRepartida[x];
+            boolean cantar = false;
+            //Cada if es un palo
+            if(mano.contains("11O") && mano.contains("12O")){
+                if(paloTriunfo.contains("O")){
+                    System.out.println("Jugador "+(x+1)+" puede cantar 40 en Oros");
+                    cantar = true;
+                }
+                else{
+                    System.out.println("Jugador "+(x+1)+" puede cantar 20 en Oros");
+                    cantar = true;
+                }
             }
+            if(mano.contains("11C") && mano.contains("12C")){
+                if(paloTriunfo.contains("C")){
+                    System.out.println("Jugador "+(x+1)+" puede cantar 40 en Copas");
+                    cantar = true;
+                }
+                else{
+                    System.out.println("Jugador "+(x+1)+" puede cantar 20 en Copas");
+                    cantar = true;
+                }
+            }
+            if(mano.contains("11B") && mano.contains("12B")){
+                if(paloTriunfo.contains("B")){
+                    System.out.println("Jugador "+(x+1)+" puede cantar 40 en Bastos");
+                    cantar = true;
+                }
+                else{
+                    System.out.println("Jugador "+(x+1)+" puede cantar 20 en Bastos");
+                    cantar = true;
+                }
+            }
+            if(mano.contains("11E") && mano.contains("12E")){
+                if(paloTriunfo.contains("E")){
+                    System.out.println("Jugador "+(x+1)+" puede cantar 40 en Espadas");
+                    cantar = true;
+                }
+                else{
+                    System.out.println("Jugador "+(x+1)+" puede cantar 20 en Espadas");
+                    cantar = true;
+                }
+            }
+            return cantar;
+        }
+            
+            private String paloTriunfo() {
+                String paloTriunfo="";
+                int ale = (int) Math.floor(Math.random()*4);
+                if(ale==0) paloTriunfo+="O";
+                if(ale==1) paloTriunfo+="C";
+                if(ale==2) paloTriunfo+="B";
+                if(ale==3) paloTriunfo+="E";
+                return paloTriunfo;
+        }
         
             private String[] reparteCartas(String[] baraja) {
                 String[] barajaRepartida={"Jugador 1 ","Jugador 2 ","Jugador 3 ","Jugador 4 "};
@@ -43,5 +112,5 @@ public class Tute {
                     if (x>=30) barajaRepartida[3]+=baraja[ale];
                 }
                 return barajaRepartida;
-            }
+    }
 }

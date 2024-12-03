@@ -17,6 +17,7 @@ import estudioArray.LeyDhondt;
 import estudioArray.Notas;
 import estudioArray.Primitiva;
 import estudioArray.TarjetaClave;
+import estudioArray.Tute;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -36,6 +37,7 @@ public class Main {
         //TarjetaClave ejercicio=new TarjetaClave();
         //FraseEncriptada ejercicio=new FraseEncriptada();
         //ContrasenaSegura ejercicio=new ContrasenaSegura();
-        Cincuerizado ejercicio=new Cincuerizado();
+        //Cincuerizado ejercicio=new Cincuerizado();
+        Tute ejercicio=new Tute();
     }
 }

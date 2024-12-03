@@ -12,7 +12,13 @@ public class Tute {
                          "1C","2C","3C","4C","5C","6C","7C","10C","11C","12C"};//Copa de 30 a 39
 
         String[] barajaRepartida = reparteCartas(baraja);
-        System.out.println(barajaRepartida[0]);
+        //Muestra las manos
+        for(int x=0; x<4; x++){
+        System.out.println(barajaRepartida[x]);
+        }
+        System.out.println("Palo triunfo = ");
+
+
             }
         
             private String[] reparteCartas(String[] baraja) {

@@ -4,6 +4,7 @@ import estudioArray.CaballoAjedrez;
 import estudioArray.CartasRepartidas;
 import estudioArray.Cincuerizado;
 import estudioArray.ContrasenaSegura;
+import estudioArray.CuentaBancaria;
 import estudioArray.EjercicioCadena2;
 import estudioArray.EjercicioCadena3;
 import estudioArray.EjercicioCadenas1;
@@ -16,6 +17,7 @@ import estudioArray.ISBN;
 import estudioArray.LeyDhondt;
 import estudioArray.Notas;
 import estudioArray.Primitiva;
+import estudioArray.Pruebas;
 import estudioArray.TarjetaClave;
 import estudioArray.Tute;
 
@@ -38,6 +40,8 @@ public class Main {
         //FraseEncriptada ejercicio=new FraseEncriptada();
         //ContrasenaSegura ejercicio=new ContrasenaSegura();
         //Cincuerizado ejercicio=new Cincuerizado();
-        Tute ejercicio=new Tute();
+        //Tute ejercicio=new Tute();
+        CuentaBancaria ejercicio=new CuentaBancaria();
+        //Pruebas ejercicio=new Pruebas();
     }
 }
